@@ -9,7 +9,12 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(params[:id])
     render "/students/show"
   end
-
+  
+  def activate 
+    @student = Student.find_by_id(params[:id])
+    @student.active 
+  end 
+  
   private
 
     def set_student
